@@ -1,0 +1,517 @@
+/* =========================================================
+   HEARTLINK AI — Animations
+   File: css/animations.css
+   Version: 2.0
+   ========================================================= */
+
+/* ---------- Animation tokens ---------- */
+:root {
+  --anim-fast: 220ms;
+  --anim-normal: 520ms;
+  --anim-slow: 850ms;
+  --anim-ease: cubic-bezier(.22, 1, .36, 1);
+  --anim-ease-soft: cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ---------- Page entrance ---------- */
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: pageFadeIn 420ms ease-out both;
+}
+
+/* ---------- Hero entrance ---------- */
+@keyframes heroContentIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-24px, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroVisualIn {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 18px, 0) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.hero-content {
+  animation: heroContentIn 780ms var(--anim-ease) 80ms both;
+}
+
+.hero-visual {
+  animation: heroVisualIn 900ms var(--anim-ease) 180ms both;
+}
+
+/* ---------- Floating phone ---------- */
+@keyframes phoneFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(.15deg);
+  }
+  50% {
+    transform: translate3d(0, -13px, 0) rotate(-.25deg);
+  }
+}
+
+.floating {
+  animation: phoneFloat 5.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ---------- Background glow movement ---------- */
+@keyframes glowDriftOne {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(42px, 28px, 0) scale(1.08);
+  }
+}
+
+@keyframes glowDriftTwo {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-38px, 36px, 0) scale(1.1);
+  }
+}
+
+.glow-one {
+  animation: glowDriftOne 14s ease-in-out infinite;
+}
+
+.glow-two {
+  animation: glowDriftTwo 17s ease-in-out infinite;
+}
+
+/* ---------- Brand gradient movement ---------- */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-content h1 span,
+.btn-primary,
+.desktop-menu .telegram-link,
+.mobile-menu .mobile-telegram {
+  background-size: 180% 180%;
+}
+
+.hero-content h1 span {
+  animation: gradientShift 8s ease infinite;
+}
+
+/* ---------- Button shine ---------- */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-primary::after {
+  position: absolute;
+  z-index: -1;
+  top: -80%;
+  left: -45%;
+  width: 34%;
+  height: 260%;
+  content: "";
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.32),
+    transparent
+  );
+  transform: rotate(18deg);
+  transition: left 650ms var(--anim-ease), opacity 180ms ease;
+}
+
+.btn-primary:hover::after,
+.btn-primary:focus-visible::after {
+  left: 120%;
+  opacity: 1;
+}
+
+/* ---------- Badge pulse ---------- */
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(236,72,153,0);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(236,72,153,.08);
+  }
+}
+
+.badge-check {
+  animation: badgePulse 3.6s ease-in-out infinite;
+}
+
+/* ---------- Phone match pulse ---------- */
+@keyframes matchPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(236,72,153,0);
+  }
+  50% {
+    transform: scale(1.018);
+    box-shadow: 0 10px 24px rgba(236,72,153,.10);
+  }
+}
+
+.match-box {
+  animation: matchPulse 3.4s ease-in-out infinite;
+}
+
+/* ---------- Scroll reveal system ----------
+   main.js can add .reveal-ready and .is-visible.
+   Elements remain visible if JS is unavailable.
+   ------------------------------------------------ */
+.reveal-ready {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity var(--anim-slow) var(--anim-ease),
+    transform var(--anim-slow) var(--anim-ease);
+}
+
+.reveal-ready.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-left.reveal-ready {
+  transform: translate3d(-36px, 0, 0);
+}
+
+.reveal-right.reveal-ready {
+  transform: translate3d(36px, 0, 0);
+}
+
+.reveal-left.reveal-ready.is-visible,
+.reveal-right.reveal-ready.is-visible {
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-scale.reveal-ready {
+  transform: scale(.96);
+}
+
+.reveal-scale.reveal-ready.is-visible {
+  transform: scale(1);
+}
+
+/* ---------- Stagger helpers ---------- */
+.stagger-1 { transition-delay: 60ms; }
+.stagger-2 { transition-delay: 120ms; }
+.stagger-3 { transition-delay: 180ms; }
+.stagger-4 { transition-delay: 240ms; }
+.stagger-5 { transition-delay: 300ms; }
+.stagger-6 { transition-delay: 360ms; }
+
+/* ---------- Card interaction ---------- */
+.feature-card,
+.step-card,
+.language-card,
+.statistics-card {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.feature-card::before,
+.step-card::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(249,115,22,.055),
+    rgba(236,72,153,.04),
+    rgba(139,92,246,.045)
+  );
+  transition: opacity var(--anim-fast) ease;
+}
+
+.feature-card:hover::before,
+.step-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card > *,
+.step-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Feature icon ---------- */
+@keyframes iconSoftBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.feature-card:hover .feature-icon {
+  animation: iconSoftBounce .8s ease-in-out;
+}
+
+/* ---------- Statistics highlight ---------- */
+.statistics-card strong {
+  transition: transform var(--anim-fast) var(--anim-ease);
+}
+
+.statistics-card:hover strong {
+  transform: scale(1.06);
+}
+
+/* ---------- Language cards ---------- */
+.language-card span:first-child {
+  transition: transform var(--anim-fast) var(--anim-ease);
+}
+
+.language-card:hover span:first-child {
+  transform: scale(1.12) rotate(-3deg);
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq-answer {
+  overflow: hidden;
+  transform-origin: top;
+}
+
+.faq-item {
+  transition:
+    border-color var(--anim-fast) ease,
+    box-shadow var(--anim-fast) ease,
+    transform var(--anim-fast) ease;
+}
+
+.faq-item:has(.faq-question[aria-expanded="true"]) {
+  border-color: rgba(236,72,153,.20);
+  box-shadow: 0 18px 42px rgba(73,39,84,.10);
+}
+
+.faq-question {
+  transition: color var(--anim-fast) ease;
+}
+
+.faq-question:hover,
+.faq-question[aria-expanded="true"] {
+  color: var(--primary-strong);
+}
+
+/* ---------- Mobile menu ---------- */
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.mobile-menu:not([hidden]) {
+  animation: mobileMenuIn 260ms var(--anim-ease) both;
+}
+
+.mobile-button span {
+  transform-origin: center;
+  transition:
+    transform 240ms var(--anim-ease),
+    opacity 180ms ease;
+}
+
+.mobile-button[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-button[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-button[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------- Header state ----------
+   main.js may add .is-scrolled to #header.
+   ------------------------------------------------ */
+.site-header {
+  transition:
+    background var(--anim-fast) ease,
+    box-shadow var(--anim-fast) ease,
+    border-color var(--anim-fast) ease;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: rgba(65,40,72,.10);
+  background: rgba(255,250,247,.94);
+  box-shadow: 0 10px 35px rgba(73,39,84,.07);
+}
+
+/* ---------- CTA ambient glow ---------- */
+@keyframes ctaGlow {
+  0%, 100% {
+    opacity: .55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .85;
+    transform: scale(1.06);
+  }
+}
+
+.cta-box::before {
+  animation: ctaGlow 7s ease-in-out infinite;
+}
+
+.cta-box::after {
+  animation: ctaGlow 9s ease-in-out infinite reverse;
+}
+
+/* ---------- Scroll-to-top ---------- */
+@keyframes scrollTopIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(.92);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.scroll-top:not([hidden]) {
+  animation: scrollTopIn 260ms var(--anim-ease) both;
+}
+
+.scroll-top {
+  transition:
+    transform var(--anim-fast) var(--anim-ease),
+    box-shadow var(--anim-fast) ease;
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(73,39,84,.18);
+}
+
+/* ---------- Cookie notice ---------- */
+@keyframes cookieNoticeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.cookie-notice:not([hidden]) {
+  animation: cookieNoticeIn 380ms var(--anim-ease) both;
+}
+
+/* ---------- Image hover depth ---------- */
+.hero-photo img,
+.secret-image img,
+.phone-large img {
+  transition: transform 900ms var(--anim-ease);
+}
+
+.secret-image:hover img {
+  transform: scale(1.025);
+}
+
+/* ---------- Link underline animation ---------- */
+.footer-column a:not(.btn),
+.footer-links a {
+  position: relative;
+}
+
+.footer-column a:not(.btn)::after,
+.footer-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--anim-fast) var(--anim-ease);
+}
+
+.footer-column a:not(.btn):hover::after,
+.footer-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- Accessibility: reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .hero-content,
+  .hero-visual,
+  .floating,
+  .glow-one,
+  .glow-two,
+  .hero-content h1 span,
+  .badge-check,
+  .match-box,
+  .cta-box::before,
+  .cta-box::after,
+  .mobile-menu:not([hidden]),
+  .scroll-top:not([hidden]),
+  .cookie-notice:not([hidden]) {
+    animation: none !important;
+  }
+
+  .reveal-ready,
+  .reveal-left.reveal-ready,
+  .reveal-right.reveal-ready,
+  .reveal-scale.reveal-ready {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .btn-primary::after {
+    display: none;
+  }
+}
+
+/* ---------- Touch devices ---------- */
+@media (hover: none) {
+  .feature-card:hover .feature-icon {
+    animation: none;
+  }
+
+  .statistics-card:hover strong,
+  .language-card:hover span:first-child,
+  .secret-image:hover img,
+  .scroll-top:hover {
+    transform: none;
+  }
+
+  .btn-primary::after {
+    display: none;
+  }
+}

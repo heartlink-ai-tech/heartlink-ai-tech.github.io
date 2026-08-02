@@ -1,0 +1,822 @@
+/* =========================================================
+   HEARTLINK AI — Responsive Styles
+   File: css/responsive.css
+   Version: 2.0
+   Breakpoints: 1440 / 1200 / 1024 / 900 / 768 / 600 / 480 / 375
+   ========================================================= */
+
+/* Large desktop */
+@media (min-width: 1441px) {
+  :root {
+    --container: 1240px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.04fr) minmax(460px, .96fr);
+  }
+
+  .hero-visual {
+    min-height: 660px;
+  }
+}
+
+/* Laptop / smaller desktop */
+@media (max-width: 1200px) {
+  :root {
+    --container: 1040px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(390px, .9fr);
+    gap: 46px;
+  }
+
+  .hero-visual {
+    min-height: 560px;
+  }
+
+  .phone-card {
+    width: min(270px, 55%);
+  }
+
+  .features-grid {
+    gap: 17px;
+  }
+
+  .feature-card {
+    padding: 26px;
+  }
+
+  .steps-grid {
+    gap: 14px;
+  }
+
+  .step-card {
+    padding: 24px;
+  }
+
+  .footer-grid {
+    gap: 30px;
+  }
+}
+
+/* Tablet landscape / compact laptop */
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 76px;
+    --section-space: clamp(68px, 8vw, 100px);
+  }
+
+  .container {
+    width: min(calc(100% - 36px), var(--container));
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-button {
+    display: block;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 66px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(3rem, 7vw, 4.8rem);
+  }
+
+  .hero-visual {
+    min-height: 520px;
+  }
+
+  .hero-photo {
+    right: 7%;
+    border-radius: 34px;
+  }
+
+  .phone-card {
+    right: -4px;
+    bottom: 18px;
+    width: 54%;
+  }
+
+  .phone-screen {
+    min-height: 390px;
+  }
+
+  .statistics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statistics-card:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .statistics-card:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step-card:not(:last-child)::after {
+    display: none;
+  }
+
+  .phone-preview-grid,
+  .secret-grid {
+    gap: 46px;
+  }
+
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .footer-grid .footer-column:last-child {
+    grid-column: 2 / 4;
+  }
+}
+
+/* Intermediate tablet */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    max-width: 720px;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .hero-label {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-inline: auto;
+  }
+
+  .hero-buttons,
+  .hero-badges {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: min(650px, 100%);
+    min-height: 600px;
+    margin-inline: auto;
+  }
+
+  .hero-photo {
+    inset: 0 9% 0 9%;
+  }
+
+  .phone-card {
+    right: 3%;
+    width: min(275px, 47%);
+  }
+
+  .phone-preview-grid,
+  .secret-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-left,
+  .secret-content {
+    width: min(720px, 100%);
+    margin-inline: auto;
+  }
+
+  .preview-left {
+    text-align: center;
+  }
+
+  .preview-list {
+    width: min(430px, 100%);
+    margin-inline: auto;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .preview-right {
+    margin-top: 12px;
+  }
+
+  .secret-image {
+    width: min(620px, 100%);
+    margin-inline: auto;
+  }
+
+  .secret-content {
+    text-align: center;
+  }
+
+  .secret-content .section-kicker {
+    justify-content: center;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  :root {
+    --section-space: 72px;
+  }
+
+  .container {
+    width: min(calc(100% - 30px), var(--container));
+  }
+
+  .section-title {
+    margin-bottom: 38px;
+  }
+
+  .section-title h2,
+  .preview-left h2,
+  .secret-content h2,
+  .cta-box h2 {
+    font-size: clamp(2rem, 7.5vw, 3rem);
+  }
+
+  .hero {
+    padding-top: 52px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.85rem, 11vw, 4.5rem);
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+  }
+
+  .hero-visual {
+    min-height: 530px;
+  }
+
+  .hero-photo {
+    inset: 0 5% 0 5%;
+  }
+
+  .phone-card {
+    right: 0;
+    width: min(250px, 48%);
+    border-radius: 29px;
+  }
+
+  .phone-screen {
+    min-height: 350px;
+    border-radius: 22px;
+  }
+
+  .profile-card {
+    padding: 11px;
+  }
+
+  .match-box {
+    margin-inline: 11px;
+  }
+
+  .statistics-card {
+    min-height: 112px;
+  }
+
+  .features-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .step-card {
+    min-height: auto;
+  }
+
+  .phone-preview-grid,
+  .secret-grid {
+    gap: 38px;
+  }
+
+  .phone-large {
+    width: min(360px, 84%);
+  }
+
+  .languages-grid {
+    gap: 11px;
+  }
+
+  .language-card {
+    min-height: 76px;
+    padding: 15px 16px;
+  }
+
+  .cta-box {
+    border-radius: 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid .footer-column:last-child {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Large phone */
+@media (max-width: 600px) {
+  :root {
+    --header-height: 70px;
+    --section-space: 62px;
+  }
+
+  .container {
+    width: min(calc(100% - 24px), var(--container));
+  }
+
+  .site-header,
+  .navbar {
+    height: var(--header-height);
+  }
+
+  .logo img {
+    max-height: 46px;
+    max-width: 190px;
+  }
+
+  .mobile-button {
+    width: 43px;
+    height: 43px;
+  }
+
+  .mobile-menu {
+    top: var(--header-height);
+  }
+
+  .hero {
+    padding-top: 42px;
+  }
+
+  .hero-label {
+    padding: 7px 10px;
+    font-size: .69rem;
+    letter-spacing: .12em;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 20px;
+    font-size: clamp(2.65rem, 13vw, 3.8rem);
+    letter-spacing: -.06em;
+  }
+
+  .hero-description {
+    margin-bottom: 25px;
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: min(390px, 100%);
+    margin-inline: auto;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-badges {
+    gap: 7px;
+  }
+
+  .badge {
+    padding: 8px 10px;
+    font-size: .82rem;
+  }
+
+  .hero-visual {
+    min-height: 465px;
+    margin-top: 12px;
+  }
+
+  .hero-photo {
+    inset: 0 3% 0 3%;
+    border-radius: 28px;
+  }
+
+  .phone-card {
+    right: 0;
+    bottom: 12px;
+    width: min(215px, 50%);
+    padding: 7px;
+    border-radius: 26px;
+  }
+
+  .phone-top {
+    height: 20px;
+  }
+
+  .phone-screen {
+    min-height: 310px;
+    border-radius: 19px;
+  }
+
+  .telegram-header {
+    padding: 9px;
+    font-size: .7rem;
+  }
+
+  .telegram-header img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .profile-card h2 {
+    font-size: 1.05rem;
+  }
+
+  .profile-card p,
+  .match-box {
+    font-size: .72rem;
+  }
+
+  .match-box {
+    padding: 8px;
+  }
+
+  .statistics {
+    padding-bottom: 28px;
+  }
+
+  .statistics-grid {
+    border-radius: 20px;
+  }
+
+  .statistics-card {
+    min-height: 100px;
+    padding: 16px 10px;
+  }
+
+  .statistics-card strong {
+    font-size: 1.8rem;
+  }
+
+  .statistics-card span {
+    font-size: .76rem;
+  }
+
+  .feature-card,
+  .step-card {
+    padding: 23px;
+    border-radius: 20px;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+  }
+
+  .phone-preview {
+    text-align: center;
+  }
+
+  .preview-list {
+    text-align: left;
+  }
+
+  .phone-large {
+    width: min(320px, 88%);
+    padding: 9px;
+    border-radius: 36px;
+  }
+
+  .phone-large img {
+    border-radius: 28px;
+  }
+
+  .secret-image img {
+    border-radius: 28px;
+  }
+
+  .languages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .language-card {
+    min-height: 68px;
+  }
+
+  .faq-question {
+    min-height: 66px;
+    padding: 17px 54px 17px 17px;
+    font-size: .94rem;
+  }
+
+  .faq-question::after {
+    right: 15px;
+  }
+
+  .faq-answer {
+    padding: 0 17px 18px;
+    font-size: .93rem;
+  }
+
+  .cta {
+    padding-top: 24px;
+  }
+
+  .cta-box {
+    padding: 42px 20px;
+    border-radius: 24px;
+  }
+
+  .cta-box .btn {
+    width: min(340px, 100%);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-brand,
+  .footer-grid .footer-column:last-child {
+    grid-column: auto;
+  }
+
+  .footer-links {
+    gap: 12px 16px;
+  }
+
+  .scroll-top {
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .cookie-notice {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100% - 24px);
+  }
+}
+
+/* Standard phone */
+@media (max-width: 480px) {
+  .section-kicker {
+    font-size: .7rem;
+    letter-spacing: .12em;
+  }
+
+  .section-title h2,
+  .preview-left h2,
+  .secret-content h2,
+  .cta-box h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.45rem, 13.2vw, 3.3rem);
+  }
+
+  .hero-visual {
+    min-height: 410px;
+  }
+
+  .hero-photo {
+    inset: 0 2%;
+  }
+
+  .phone-card {
+    width: min(190px, 51%);
+  }
+
+  .phone-screen {
+    min-height: 275px;
+  }
+
+  .profile-card > img {
+    border-radius: 13px;
+  }
+
+  .statistics-card {
+    min-height: 94px;
+  }
+
+  .statistics-card strong {
+    font-size: 1.55rem;
+  }
+
+  .statistics-card span {
+    max-width: 130px;
+    font-size: .71rem;
+    line-height: 1.3;
+  }
+
+  .language-card {
+    padding-inline: 15px;
+  }
+
+  .cookie-content {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cookie-content .btn {
+    width: 100%;
+  }
+}
+
+/* Small phone */
+@media (max-width: 375px) {
+  .container {
+    width: calc(100% - 20px);
+  }
+
+  .logo img {
+    max-width: 160px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.35rem;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-visual {
+    min-height: 365px;
+  }
+
+  .phone-card {
+    width: 175px;
+  }
+
+  .phone-screen {
+    min-height: 250px;
+  }
+
+  .telegram-header strong {
+    font-size: .62rem;
+  }
+
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .statistics-card + .statistics-card,
+  .statistics-card:nth-child(3),
+  .statistics-card:nth-child(4) {
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+
+  .statistics-card:first-child {
+    border-top: 0;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+}
+
+/* Short screens: prevent hero from becoming awkwardly tall */
+@media (min-width: 901px) and (max-height: 760px) {
+  .hero {
+    min-height: auto;
+    padding-block: 52px 70px;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+  }
+}
+
+/* Touch devices: remove hover-dependent movement */
+@media (hover: none) {
+  .btn:hover,
+  .feature-card:hover,
+  .language-card:hover {
+    transform: none;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* High contrast preference */
+@media (prefers-contrast: more) {
+  :root {
+    --border: rgba(33,25,39,.28);
+    --border-strong: rgba(33,25,39,.42);
+    --text-soft: #514a55;
+  }
+
+  .feature-card,
+  .step-card,
+  .language-card,
+  .faq-item,
+  .statistics-grid {
+    border-width: 2px;
+  }
+}
+
+/* Print */
+@media print {
+  .site-header,
+  .mobile-menu,
+  .scroll-top,
+  .cookie-notice,
+  .background-gradient,
+  .background-glow,
+  .hero-buttons,
+  .cta {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  main section {
+    padding-block: 28px;
+    break-inside: avoid;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-grid,
+  .phone-preview-grid,
+  .secret-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid,
+  .steps-grid,
+  .languages-grid,
+  .statistics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-card,
+  .step-card,
+  .language-card,
+  .faq-item,
+  .statistics-grid {
+    box-shadow: none;
+  }
+
+  .site-footer {
+    color: #000;
+    background: #fff;
+  }
+}
