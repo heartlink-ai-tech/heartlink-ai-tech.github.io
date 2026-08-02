@@ -53,6 +53,19 @@
           <li><a href="#how">How it Works</a></li>
           <li><a href="#languages">Languages</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li class="language-switcher-item">
+            <label class="sr-only" for="languageSelect">Language</label>
+            <select id="languageSelect" class="language-select" aria-label="Select language">
+              <option value="en">EN</option>
+              <option value="de">DE</option>
+              <option value="fr">FR</option>
+              <option value="es">ES</option>
+              <option value="uk">UA</option>
+              <option value="ru">RU</option>
+              <option value="ar">AR</option>
+              <option value="zh">中文</option>
+            </select>
+          </li>
           <li>
             <a class="telegram-link" href="https://t.me/MyMes1277_bot" target="_blank" rel="noopener noreferrer" aria-label="Open @MyMes1277_bot in Telegram">
               Telegram Bot
@@ -76,6 +89,15 @@
         <li><a href="#how">How it Works</a></li>
         <li><a href="#languages">Languages</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li class="mobile-language-row">
+          <label for="mobileLanguageSelect">Language</label>
+          <select id="mobileLanguageSelect" class="language-select" aria-label="Select language">
+            <option value="en">English</option><option value="de">Deutsch</option>
+            <option value="fr">Français</option><option value="es">Español</option>
+            <option value="uk">Українська</option><option value="ru">Русский</option>
+            <option value="ar">العربية</option><option value="zh">中文</option>
+          </select>
+        </li>
         <li><a class="mobile-telegram" href="https://t.me/MyMes1277_bot" target="_blank" rel="noopener noreferrer">Start @MyMes1277_bot</a></li>
         <li><a href="https://t.me/HEARTLINK55" target="_blank" rel="noopener noreferrer">Technical Support @HEARTLINK55</a></li>
       </ul>
@@ -255,14 +277,14 @@
         </header>
 
         <div class="languages-grid" aria-label="Supported interface examples">
-          <div class="language-card"><span aria-hidden="true">🇬🇧</span><span>English</span></div>
-          <div class="language-card"><span aria-hidden="true">🇩🇪</span><span>Deutsch</span></div>
-          <div class="language-card"><span aria-hidden="true">🇫🇷</span><span>Français</span></div>
-          <div class="language-card"><span aria-hidden="true">🇪🇸</span><span>Español</span></div>
-          <div class="language-card"><span aria-hidden="true">🇺🇦</span><span>Українська</span></div>
-          <div class="language-card"><span aria-hidden="true">🌐</span><span>Русский</span></div>
-          <div class="language-card"><span aria-hidden="true">🌐</span><span>العربية</span></div>
-          <div class="language-card"><span aria-hidden="true">🌐</span><span>中文</span></div>
+          <button class="language-card" type="button" data-language="en" aria-label="Switch language to English"><span aria-hidden="true">🇬🇧</span><span>English</span></button>
+          <button class="language-card" type="button" data-language="de" aria-label="Switch language to Deutsch"><span aria-hidden="true">🇩🇪</span><span>Deutsch</span></button>
+          <button class="language-card" type="button" data-language="fr" aria-label="Switch language to Français"><span aria-hidden="true">🇫🇷</span><span>Français</span></button>
+          <button class="language-card" type="button" data-language="es" aria-label="Switch language to Español"><span aria-hidden="true">🇪🇸</span><span>Español</span></button>
+          <button class="language-card" type="button" data-language="uk" aria-label="Switch language to Українська"><span aria-hidden="true">🇺🇦</span><span>Українська</span></button>
+          <button class="language-card" type="button" data-language="ru" aria-label="Switch language to Русский"><span aria-hidden="true">🌐</span><span>Русский</span></button>
+          <button class="language-card" type="button" data-language="ar" aria-label="Switch language to العربية"><span aria-hidden="true">🌐</span><span>العربية</span></button>
+          <button class="language-card" type="button" data-language="zh" aria-label="Switch language to 中文"><span aria-hidden="true">🌐</span><span>中文</span></button>
         </div>
       </div>
     </section>

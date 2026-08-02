@@ -1260,3 +1260,66 @@ main section {
 .telegram-identity a:focus-visible {
   text-decoration: underline;
 }
+
+
+/* =========================================================
+   HEARTLINK AI — multilingual controls + hero composition fix
+   ========================================================= */
+.language-switcher-item { display:flex; align-items:center; }
+.language-select {
+  appearance:auto;
+  min-width:72px;
+  padding:.62rem .75rem;
+  border:1px solid rgba(31,24,36,.14);
+  border-radius:999px;
+  background:rgba(255,255,255,.86);
+  color:inherit;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+.mobile-language-row { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem 0; }
+.mobile-language-row label { font-weight:700; }
+.languages-grid .language-card {
+  width:100%;
+  font:inherit;
+  color:inherit;
+  cursor:pointer;
+  border:1px solid rgba(31,24,36,.08);
+}
+.languages-grid .language-card.is-active {
+  outline:3px solid rgba(249,115,22,.22);
+  border-color:#f97316;
+}
+html[dir="rtl"] body { direction:rtl; }
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .hero-grid,
+html[dir="rtl"] .phone-preview-grid,
+html[dir="rtl"] .secret-grid,
+html[dir="rtl"] .footer-grid { direction:rtl; }
+
+/* Keep the main photograph and phone visually separate on desktop. */
+.hero-visual {
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(210px,32%) !important;
+  align-items:center !important;
+  gap:clamp(18px,2vw,34px) !important;
+}
+.hero-photo {
+  position:relative !important;
+  inset:auto !important;
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+}
+.phone-card {
+  position:relative !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+  z-index:4;
+  width:100% !important;
+  max-width:260px !important;
+  justify-self:end;
+}
