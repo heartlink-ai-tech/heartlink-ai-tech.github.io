@@ -1333,3 +1333,33 @@ html[dir="rtl"] .footer-grid { direction:rtl; }
 .feature-explainer-image { max-width:900px; margin:32px auto 0; }
 .feature-explainer-image img { display:block; width:100%; height:auto; border-radius:28px; box-shadow:0 22px 65px rgba(35,22,47,.14); }
 @media (max-width: 760px) { .statistics-grid { grid-template-columns:1fr; } .feature-explainer { padding:48px 0; } }
+
+
+/* Approved large English HEARTLINK visual — 2026-08-05 */
+@media (min-width: 981px) {
+  #hero .container.hero-grid {
+    grid-template-columns: minmax(300px, .68fr) minmax(620px, 1.32fr);
+    gap: clamp(28px, 3vw, 54px);
+    max-width: 1480px;
+  }
+  #hero .hero-visual-single {
+    min-height: 0 !important;
+    width: 100%;
+    overflow: visible;
+  }
+  #hero .hero-new-phone {
+    width: 100% !important;
+    max-width: 980px !important;
+  }
+}
+#hero .hero-new-phone img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  aspect-ratio: auto !important;
+}
+@media (max-width: 980px) {
+  #hero .hero-visual-single { min-height: 0 !important; }
+  #hero .hero-new-phone { width: 100% !important; max-width: 900px !important; }
+}
