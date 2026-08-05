@@ -1323,3 +1323,13 @@ html[dir="rtl"] .footer-grid { direction:rtl; }
   max-width:260px !important;
   justify-self:end;
 }
+
+/* Final remarks */
+.statistics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.hero-visual-single { display:flex; align-items:center; justify-content:center; }
+.hero-new-phone { margin:0; width:min(100%, 520px); }
+.hero-new-phone img { display:block; width:100%; height:auto; border-radius:28px; box-shadow:0 24px 70px rgba(35,22,47,.18); }
+.feature-explainer { padding:72px 0; }
+.feature-explainer-image { max-width:900px; margin:32px auto 0; }
+.feature-explainer-image img { display:block; width:100%; height:auto; border-radius:28px; box-shadow:0 22px 65px rgba(35,22,47,.14); }
+@media (max-width: 760px) { .statistics-grid { grid-template-columns:1fr; } .feature-explainer { padding:48px 0; } }

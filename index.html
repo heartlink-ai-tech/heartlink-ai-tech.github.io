@@ -60,10 +60,6 @@
               <option value="de">DE</option>
               <option value="fr">FR</option>
               <option value="es">ES</option>
-              <option value="uk">UA</option>
-              <option value="ru">RU</option>
-              <option value="ar">AR</option>
-              <option value="zh">中文</option>
             </select>
           </li>
           <li>
@@ -94,8 +90,6 @@
           <select id="mobileLanguageSelect" class="language-select" aria-label="Select language">
             <option value="en">English</option><option value="de">Deutsch</option>
             <option value="fr">Français</option><option value="es">Español</option>
-            <option value="uk">Українська</option><option value="ru">Русский</option>
-            <option value="ar">العربية</option><option value="zh">中文</option>
           </select>
         </li>
         <li><a class="mobile-telegram" href="https://t.me/MyMes1277_bot" target="_blank" rel="noopener noreferrer">Start @MyMes1277_bot</a></li>
@@ -108,7 +102,7 @@
     <section id="hero" class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="hero-label">AI POWERED <span aria-hidden="true">•</span> FREE <span aria-hidden="true">•</span> PRIVATE</p>
+          <p class="hero-label">AI POWERED <span aria-hidden="true">•</span> PRIVATE</p>
           <h1 id="hero-title">
             Meet the person
             <span>who could change</span>
@@ -132,29 +126,10 @@
           </ul>
         </div>
 
-        <div class="hero-visual" aria-label="HEARTLINK AI preview">
-          <figure class="hero-photo">
-            <img src="assets/hero/hero-couple.jpg" alt="A couple enjoying a conversation" width="760" height="900" fetchpriority="high">
+        <div class="hero-visual hero-visual-single" aria-label="HEARTLINK AI preview">
+          <figure class="hero-new-phone">
+            <img src="assets/feature/how-it-works.png" alt="HEARTLINK AI profile example: Anna, 28, nearby match and Secret Desire" fetchpriority="high">
           </figure>
-
-          <div class="phone-card floating" aria-label="Example HEARTLINK AI match">
-            <div class="phone-top" aria-hidden="true">
-              <span class="phone-camera"></span>
-              <span class="phone-speaker"></span>
-            </div>
-            <div class="phone-screen">
-              <div class="telegram-header">
-                <img src="assets/logo/logo-small.png" alt="" width="36" height="36">
-                <strong>HEARTLINK AI</strong>
-              </div>
-              <div class="profile-card">
-                <img src="assets/screenshots/profile.jpg" alt="Example user profile" width="280" height="300" loading="lazy">
-                <h2>Emma</h2>
-                <p>29 <span aria-hidden="true">•</span> Germany</p>
-              </div>
-              <p class="match-box"><span aria-hidden="true">❤️</span> AI found a 97% match nearby</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -165,7 +140,6 @@
           <article class="statistics-card"><strong>190+</strong><span>Countries Supported</span></article>
           <article class="statistics-card"><strong>AI</strong><span>Intelligent Matchmaking</span></article>
           <article class="statistics-card"><strong>24/7</strong><span>Telegram Availability</span></article>
-          <article class="statistics-card"><strong>FREE</strong><span>During Beta Testing</span></article>
         </div>
       </div>
     </section>
@@ -187,7 +161,7 @@
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">⌖</div>
             <h3>GPS Search</h3>
-            <p>Discover people nearby or expand your search around the world with an adjustable search radius.</p>
+            <p>Discover people nearby or expand your search around the world with an adjustable search radius. Your location is never shown to other users. AI uses it exclusively to find suitable partners near you.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">文</div>
@@ -281,10 +255,6 @@
           <button class="language-card" type="button" data-language="de" aria-label="Switch language to Deutsch"><span aria-hidden="true">🇩🇪</span><span>Deutsch</span></button>
           <button class="language-card" type="button" data-language="fr" aria-label="Switch language to Français"><span aria-hidden="true">🇫🇷</span><span>Français</span></button>
           <button class="language-card" type="button" data-language="es" aria-label="Switch language to Español"><span aria-hidden="true">🇪🇸</span><span>Español</span></button>
-          <button class="language-card" type="button" data-language="uk" aria-label="Switch language to Українська"><span aria-hidden="true">🇺🇦</span><span>Українська</span></button>
-          <button class="language-card" type="button" data-language="ru" aria-label="Switch language to Русский"><span aria-hidden="true">🌐</span><span>Русский</span></button>
-          <button class="language-card" type="button" data-language="ar" aria-label="Switch language to العربية"><span aria-hidden="true">🌐</span><span>العربية</span></button>
-          <button class="language-card" type="button" data-language="zh" aria-label="Switch language to 中文"><span aria-hidden="true">🌐</span><span>中文</span></button>
         </div>
       </div>
     </section>
@@ -298,8 +268,16 @@
 
         <div class="faq-container">
           <article class="faq-item">
-            <h3><button class="faq-question" type="button" aria-expanded="false">Is HEARTLINK AI free?</button></h3>
-            <div class="faq-answer"><p>Yes. During the current beta period, the service is free to use.</p></div>
+            <h3><button class="faq-question" type="button" aria-expanded="false">What does it cost to use HEARTLINK AI?</button></h3>
+            <div class="faq-answer"><p>Currently, HEARTLINK AI costs 1.5 USD for 10 hours of use. You can pause the bot whenever you do not plan to use it; while paused, the usage timer stops and your remaining paid time is preserved.</p></div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" aria-expanded="false">If my paid time has ended, will my profile still appear in search?</button></h3>
+            <div class="faq-answer"><p>No. Only active, paid profiles participate in search. If your profile is inactive, the system assumes that you are not currently planning to meet people. Once paid time is renewed, your profile becomes active and participates in search again.</p></div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" aria-expanded="false">Will other users be able to see my location?</button></h3>
+            <div class="faq-answer"><p>No. Your exact location is never shown to other users. HEARTLINK AI uses location data exclusively to find suitable people within the search radius you choose.</p></div>
           </article>
           <article class="faq-item">
             <h3><button class="faq-question" type="button" aria-expanded="false">Do I need to install another application?</button></h3>
